@@ -509,7 +509,7 @@
 <h1>Plaquette<a class="headerlink" href="#plaquette" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="tqec.plaquette.Plaquette">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tqec.plaquette.</span></span><span class="sig-name descname"><span class="pre">Plaquette</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qubits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">circuit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mergeable_instructions=&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug_information=&lt;factory&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tqec/plaquette/plaquette.html#Plaquette"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tqec.plaquette.Plaquette" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tqec.plaquette.</span></span><span class="sig-name descname"><span class="pre">Plaquette</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qubits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">circuit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mergeable_instructions=&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug_information=&lt;factory&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tqec/plaquette/plaquette.html#Plaquette"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tqec.plaquette.Plaquette" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Represent a QEC plaquette.</p>
 <p>This class stores qubits in the plaquette local coordinate system and a
@@ -585,7 +585,7 @@ circuits together to remove duplicate instructions.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tqec.plaquette.Plaquette.__init__" title="tqec.plaquette.Plaquette.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(name, qubits, circuit[, ...])</p></td>
 <td><p></p></td>
@@ -608,17 +608,20 @@ circuits together to remove duplicate instructions.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tqec.plaquette.Plaquette.reliable_hash" title="tqec.plaquette.Plaquette.reliable_hash"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reliable_hash</span></code></a>()</p></td>
 <td><p>Return a hash of <code class="docutils literal notranslate"><span class="pre">self</span></code> that is replicable across OSes and Python runs.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tqec.plaquette.Plaquette.to_dict" title="tqec.plaquette.Plaquette.to_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dict</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tqec.plaquette.Plaquette.reschedule_measurements" title="tqec.plaquette.Plaquette.reschedule_measurements"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reschedule_measurements</span></code></a>(schedule)</p></td>
+<td><p>Re-schedule the measurements in the plaquette circuit to the provided <code class="docutils literal notranslate"><span class="pre">schedule</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tqec.plaquette.Plaquette.to_dict" title="tqec.plaquette.Plaquette.to_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dict</span></code></a>()</p></td>
 <td><p>Return a dictionary representation of the plaquette.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tqec.plaquette.Plaquette.with_debug_information" title="tqec.plaquette.Plaquette.with_debug_information"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_debug_information</span></code></a>(debug_information)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tqec.plaquette.Plaquette.with_debug_information" title="tqec.plaquette.Plaquette.with_debug_information"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_debug_information</span></code></a>(debug_information)</p></td>
 <td><p>Create a copy of <code class="docutils literal notranslate"><span class="pre">self</span></code> with the provided <code class="docutils literal notranslate"><span class="pre">debug_information</span></code>.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <p class="rubric">Attributes</p>
-<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">num_measurements</span></code></p></td>
 <td><p>Return the number of measurements performed in the circuit representing <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p></td>
@@ -669,7 +672,7 @@ circuits together to remove duplicate instructions.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="tqec.plaquette.Plaquette.from_dict">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tqec/plaquette/plaquette.html#Plaquette.from_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tqec.plaquette.Plaquette.from_dict" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tqec/plaquette/plaquette.html#Plaquette.from_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tqec.plaquette.Plaquette.from_dict" title="Link to this definition">#</a></dt>
 <dd><p>Return a plaquette from its dictionary representation.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -784,6 +787,24 @@ it in subsequent runs or on other machines / OSes.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="tqec.plaquette.Plaquette.reschedule_measurements">
+<span class="sig-name descname"><span class="pre">reschedule_measurements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">schedule</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tqec/plaquette/plaquette.html#Plaquette.reschedule_measurements"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tqec.plaquette.Plaquette.reschedule_measurements" title="Link to this definition">#</a></dt>
+<dd><p>Re-schedule the measurements in the plaquette circuit to the provided <code class="docutils literal notranslate"><span class="pre">schedule</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>schedule</strong> (<em>int</em>) – new schedule at which measurements should be performed.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="tqec.utils.TQECError.html#tqec.utils.TQECError" title="tqec.utils.TQECError"><strong>TQECError</strong></a> – if the provided <code class="docutils literal notranslate"><span class="pre">schedule</span></code> is earlier than the current
+    maximum schedule of the circuit.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="tqec.plaquette.Plaquette.to_dict">
 <span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tqec/plaquette/plaquette.html#Plaquette.to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tqec.plaquette.Plaquette.to_dict" title="Link to this definition">#</a></dt>
 <dd><p>Return a dictionary representation of the plaquette.</p>
@@ -872,6 +893,7 @@ it in subsequent runs or on other machines / OSes.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tqec.plaquette.Plaquette.project_on_data_qubit_indices"><code class="docutils literal notranslate"><span class="pre">Plaquette.project_on_data_qubit_indices()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tqec.plaquette.Plaquette.project_on_data_qubits"><code class="docutils literal notranslate"><span class="pre">Plaquette.project_on_data_qubits()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tqec.plaquette.Plaquette.reliable_hash"><code class="docutils literal notranslate"><span class="pre">Plaquette.reliable_hash()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tqec.plaquette.Plaquette.reschedule_measurements"><code class="docutils literal notranslate"><span class="pre">Plaquette.reschedule_measurements()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tqec.plaquette.Plaquette.to_dict"><code class="docutils literal notranslate"><span class="pre">Plaquette.to_dict()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tqec.plaquette.Plaquette.with_debug_information"><code class="docutils literal notranslate"><span class="pre">Plaquette.with_debug_information()</span></code></a></li>
 </ul>
@@ -913,7 +935,7 @@ it in subsequent runs or on other machines / OSes.</p>
 
   <p class="copyright">
     
-      © Copyright 2024 - 2025, TQEC Community.
+      © Copyright 2024 - 2026, TQEC Community.
       <br/>
     
   </p>
@@ -922,7 +944,7 @@ it in subsequent runs or on other machines / OSes.</p>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     <br/>
   </p>
 </div>

@@ -27,8 +27,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=7f76b32a3354e82990f2" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -37,10 +37,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script defer src="../_static/scripts/fontawesome.js?digest=7f76b32a3354e82990f2"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
     <script src="../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
@@ -78,7 +78,9 @@
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
+  
+  
+  
   
   <dialog id="pst-search-dialog">
     
@@ -600,7 +602,7 @@ circuits together to remove duplicate instructions.</p>
 <td><p>Return a hash of <code class="docutils literal notranslate"><span class="pre">self</span></code> that is replicable across OSes and Python runs.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tqec.plaquette.Plaquette.reschedule_measurements" title="tqec.plaquette.Plaquette.reschedule_measurements"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reschedule_measurements</span></code></a>(schedule)</p></td>
-<td><p>Re-schedule the measurements in the plaquette circuit to the provided <code class="docutils literal notranslate"><span class="pre">schedule</span></code>.</p></td>
+<td><p>Return a copy of <code class="docutils literal notranslate"><span class="pre">self</span></code> with measurements rescheduled to <code class="docutils literal notranslate"><span class="pre">schedule</span></code>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tqec.plaquette.Plaquette.to_dict" title="tqec.plaquette.Plaquette.to_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dict</span></code></a>()</p></td>
 <td><p>Return a dictionary representation of the plaquette.</p></td>
@@ -780,7 +782,11 @@ it in subsequent runs or on other machines / OSes.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="tqec.plaquette.Plaquette.reschedule_measurements">
 <span class="sig-name descname"><span class="pre">reschedule_measurements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">schedule</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tqec/plaquette/plaquette.html#Plaquette.reschedule_measurements"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tqec.plaquette.Plaquette.reschedule_measurements" title="Link to this definition">#</a></dt>
-<dd><p>Re-schedule the measurements in the plaquette circuit to the provided <code class="docutils literal notranslate"><span class="pre">schedule</span></code>.</p>
+<dd><p>Return a copy of <code class="docutils literal notranslate"><span class="pre">self</span></code> with measurements rescheduled to <code class="docutils literal notranslate"><span class="pre">schedule</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Plaquette</span></code> instances are interned (e.g. via the RPNG translator’s LRU cache),
+so mutating <code class="docutils literal notranslate"><span class="pre">self.circuit</span></code> here would leak state across every other layer that
+references the same plaquette. We return a new plaquette with a fresh circuit
+instead, leaving the shared instance untouched.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>schedule</strong> (<em>int</em>) – new schedule at which measurements should be performed.</p>
@@ -790,7 +796,7 @@ it in subsequent runs or on other machines / OSes.</p>
     maximum schedule of the circuit.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>None</p>
+<dd class="field-odd"><p><a class="reference internal" href="#tqec.plaquette.Plaquette" title="tqec.plaquette.plaquette.Plaquette"><em>Plaquette</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -914,8 +920,8 @@ it in subsequent runs or on other machines / OSes.</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=7f76b32a3354e82990f2"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=7f76b32a3354e82990f2"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -949,7 +955,7 @@ it in subsequent runs or on other machines / OSes.</p>
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.17.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.17.1.
 </p></div>
       
     </div>

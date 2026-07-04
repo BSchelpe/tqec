@@ -1625,22 +1625,33 @@ class FixedBulkConventionGenerator:
             otb: getattr(extended_plaquette_collection[otb], bdy_plaquette),
         }
         if sbb == Basis.X:
-            position = (1, 3)
+            plqts = Plaquettes(
+                FrozenDefaultDict(
+                    {
+                        1: boundary[tlb].top,
+                        3: boundary[otb].bottom,
+                        5: bulk[otb].top,
+                        6: bulk[tlb].top,
+                        7: bulk[tlb].bottom,
+                        8: bulk[otb].bottom,
+                    }
+                )
+            )
         elif sbb == Basis.Z:
-            position = (2, 4)
+            plqts = Plaquettes(
+                FrozenDefaultDict(
+                    {
+                        2: boundary[tlb].top,
+                        4: boundary[otb].bottom,
+                        5: bulk[tlb].top,
+                        6: bulk[otb].top,
+                        7: bulk[otb].bottom,
+                        8: bulk[tlb].bottom,
+                    }
+                )
+            )
         else:
             raise NotImplementedError(
                 "This spatial boundary basis (neither X nor Z) is not supported."
             )
-        return Plaquettes(
-            FrozenDefaultDict(
-                {
-                    position[0]: boundary[tlb].top,
-                    position[1]: boundary[otb].bottom,
-                    5: bulk[tlb].top,
-                    6: bulk[otb].top,
-                    7: bulk[otb].bottom,
-                    8: bulk[tlb].bottom,
-                }
-            )
-        )
+        return plqts
